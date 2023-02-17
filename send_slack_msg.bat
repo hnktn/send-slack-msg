@@ -59,9 +59,9 @@ if %errorlevel%==1 (
 )
 
 :: curlでSlackにメッセージを送信 
-curl -X POST -H "Content-type: application/json" --data @data.json %webhook_url%
+for /F "usebackq" %%i in (`curl -s -X POST -H "Content-type: application/json" --data @data.json %webhook_url%`) do @set output=%%i
 
-if %errorlevel%==0 (
+if "%output%"=="ok" (
     echo メッセージの送信に成功しました
 
     :: 出力した一時ファイルを削除 
@@ -86,3 +86,9 @@ echo 使用方法 : send_slack_msg [オプション] ^<message^> ^<webhook_url^>
 echo  -h, --help 使用方法を表示します 
 echo ^<message^>     : メッセージの内容 
 echo ^<webhook_url^> : SlackのIncoming Webhookで設定されたurl 
+exit /b
+
+
+:send_msg
+curl -X POST -H "Content-type: application/json" --data @data.json %webhook_url%
+exit /b
