@@ -6,7 +6,7 @@
 :: 使用方法 : send_slack_msg [オプション] <message> <webhook_url> 
 ::  -h, --help 使用方法を表示します 
 :: <message>     : メッセージの内容 
-:: <webhook_url> : SlackのIncoming Webhookで設定されたurl 
+:: <webhook_url> : Slack AppのIncoming Webhookで設定されたURL 
 
 
 @echo off
