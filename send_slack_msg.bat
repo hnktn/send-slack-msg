@@ -87,8 +87,3 @@ echo  -h, --help 使用方法を表示します
 echo ^<message^>     : メッセージの内容 
 echo ^<webhook_url^> : SlackのIncoming Webhookで設定されたurl 
 exit /b
-
-
-:send_msg
-curl -X POST -H "Content-type: application/json" --data @data.json %webhook_url%
-exit /b
