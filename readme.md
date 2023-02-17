@@ -2,7 +2,7 @@
 コマンドプロンプトから簡単にSlackにメッセージを送信するためのバッチファイルです。
 
 # 必要事項
-- Incoming Webhookを使えるようにしたSlack Appを作成し、Webhook URLを発行していること
+- Slack Appを作成しIncoming Webhookを有効にし、Webhook URLを発行していること
 
 # 使用方法
 ## メッセージを送信する
