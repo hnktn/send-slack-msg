@@ -50,6 +50,9 @@ if %arg_count% lss %expected_args% (
 set message=%1
 set webhook_url=%2
 
+:: ファイルの読み書きをするためバッチファイルの実行ディレクトリに移動 
+pushd %~dp0
+
 :: メッセージの内容をファイルに出力 (UTF-8で出力するため) 
 echo {"text":"%message%"} > data.json
 
